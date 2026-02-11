@@ -16,7 +16,8 @@
     <a href="#nosotros">Nosotros</a>
     <a href="https://instagram.com/chikawear.co" target="_blank">Instagram</a>
     <a href="https://wa.me/573238459904?text=Hola%20quiero%20informacion%20sobre%20las%20gorras%20CHIKAWEAR" target="_blank" class="whatsapp-btn">WhatsApp</a>
-    <a href="#" onclick="mostrarLogin()">Login</a>
+   <button onclick="toggleLogin()">Login</button>
+
 
   </div>
 
@@ -41,6 +42,7 @@
 </section>
 
 <!-- CATALOGO -->
+
 <section class="catalogo" id="catalogo">
 
   <div class="gorra">
@@ -73,7 +75,7 @@
 
 </section>
 
-</section>
+
 
 <section class="beneficios">
   <div>🚚 Envíos nacionales</div>
@@ -118,23 +120,25 @@
   Producto agregado 🧢
 </div>
 
-<!-- CARRITO -->
-<div id="carritoPanel" class="carrito-panel">
-  <div id="loginPanel" class="login-panel">
+<!-- LOGIN -->
+<div id="loginPanel" class="login-panel">
   <h2>Iniciar Sesión</h2>
   <input type="text" id="usuario" placeholder="Usuario">
   <input type="password" id="password" placeholder="Contraseña">
   <button onclick="login()" class="boton">Entrar</button>
   <p id="mensajeLogin"></p>
 </div>
-
+<!-- CARRITO -->
+<div id="carritoPanel" class="carrito-panel">
   <h2>Tu Carrito</h2>
   <ul id="listaCarrito"></ul>
   <p><strong>Total: $<span id="total">0</span></strong></p>
+
   <input type="text" id="codigoDescuento" placeholder="Código de descuento">
-<button onclick="aplicarDescuento()" class="boton">Aplicar</button>
-<p id="mensajeDescuento"></p>
- <button onclick="vaciarCarrito()" class="boton">Vaciar Carrito</button>
+  <button onclick="aplicarDescuento()" class="boton">Aplicar</button>
+  <p id="mensajeDescuento"></p>
+
+  <button onclick="vaciarCarrito()" class="boton">Vaciar Carrito</button>
 </div>
 
 <!-- SCRIPT -->
@@ -142,7 +146,6 @@
 
 let carrito = [];
 let descuento = 0;
-
 
 function agregar(nombre, precio){
   carrito.push({nombre: nombre, precio: precio});
@@ -155,14 +158,6 @@ function agregar(nombre, precio){
     notif.classList.remove("activa");
   }, 2000);
 }
-
-  const notif = document.getElementById("notificacion");
-  notif.classList.add("activa");
-
-  setTimeout(function(){
-    notif.classList.remove("activa");
-  }, 2000);
-
 
 function actualizarCarrito(){
   const lista = document.getElementById("listaCarrito");
@@ -184,8 +179,7 @@ function actualizarCarrito(){
 
   contador.textContent = carrito.length;
   let totalFinal = total - (total * descuento);
-totalElemento.textContent = totalFinal;
-
+  totalElemento.textContent = totalFinal;
 }
 
 function vaciarCarrito(){
@@ -201,7 +195,9 @@ function eliminar(index){
 function toggleCarrito(){
   const panel = document.getElementById("carritoPanel");
   panel.classList.toggle("activo");
-  function mostrarLogin(){
+}
+
+function toggleLogin(){
   const panel = document.getElementById("loginPanel");
   panel.classList.toggle("activo");
 }
@@ -218,7 +214,6 @@ function login(){
   }
 }
 
-}
 function aplicarDescuento(){
   const codigo = document.getElementById("codigoDescuento").value;
   const mensaje = document.getElementById("mensajeDescuento");
@@ -238,6 +233,7 @@ function aplicarDescuento(){
 }
 
 </script>
+
 
 </body>
 </html>

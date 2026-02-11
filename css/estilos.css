@@ -1,12 +1,281 @@
-body {
-  font-family: Arial;
-  background-color: #f4f4f4;
-  text-align: center;
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
 }
 
-div {
-  background: white;
-  margin: 20px;
-  padding: 15px;
-  border-radius: 10px;
+body{
+  background:#0f0f0f;
+  color:white;
 }
+
+/* NAVBAR */
+.navbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:20px 50px;
+  background:#000;
+  position:sticky;
+  top:0;
+  z-index:1000;
+}
+
+.logo{
+  font-size:1.5rem;
+  font-weight:bold;
+  letter-spacing:2px;
+}
+
+.nav-links a{
+  color:white;
+  text-decoration:none;
+  margin-left:20px;
+  transition:0.3s;
+}
+
+.nav-links a:hover{
+  color:#e63946;
+}
+
+.whatsapp-btn{
+  background:#25D366;
+  padding:8px 15px;
+  border-radius:20px;
+}
+
+/* HEADER */
+header{
+  text-align:center;
+  padding:80px 20px;
+  background:linear-gradient(135deg,#000,#1c1c1c);
+}
+
+header h1{
+  font-size:3rem;
+  letter-spacing:5px;
+}
+
+header p{
+  margin-top:10px;
+  color:#bbb;
+}
+
+/* CATALOGO */
+.catalogo{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,280px));
+  justify-content:center;
+  gap:50px;
+  padding:80px 20px;
+}
+
+.gorra{
+  background:rgba(255,255,255,0.05);
+  padding:25px;
+  border-radius:20px;
+  text-align:center;
+  transition:0.4s;
+  overflow:hidden; 
+}
+
+.gorra:hover{
+  transform:translateY(-10px) scale(1.03);
+  box-shadow:0 15px 30px rgba(0,0,0,0.4);
+}
+
+.gorra img{
+  width:190px;
+  height:190px;
+  object-fit:cover;
+  border-radius:15px;
+  transition:0.4s; 
+}
+
+.gorra:hover img{
+  transform:scale(1.08);
+}
+
+.gorra h3{
+  margin-top:15px;
+}
+
+.gorra p{
+  margin-top:8px;
+  color:#e63946;
+  font-weight:bold;
+}
+
+.boton{
+  margin-top:15px;
+  padding:10px 25px;
+  border:none;
+  border-radius:30px;
+  background:#e63946;
+  color:white;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.boton:hover{
+  background:white;
+  color:black;
+  transform:translateY(-10px) scale(1.03);
+}
+
+/* NOSOTROS */
+.nosotros{
+  text-align:center;
+  padding:80px 20px;
+  background:#111;
+}
+
+.nosotros h2{
+  margin-bottom:20px;
+  font-size:2rem;
+}
+
+.nosotros p{
+  max-width:600px;
+  margin:auto;
+  color:#bbb;
+}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:30px;
+  background:#000;
+  font-size:0.9rem;
+  color:#888;
+}
+.carrito-icon{
+  background:#e63946;
+  color:white;
+  border:none;
+  padding:10px 15px;
+  cursor:pointer;
+  border-radius:20px;
+  margin-left:20px;
+}
+
+.carrito-panel{
+  position:fixed;
+  right:-350px;
+  top:0;
+  width:300px;
+  height:100vh;
+  background:#111;
+  padding:20px;
+  transition:0.4s;
+  overflow-y:auto;
+  box-shadow:-5px 0 15px rgba(0,0,0,0.5);
+}
+
+.carrito-panel.activo{
+  right:0;
+}
+
+.carrito-panel ul{
+  list-style:none;
+  margin:20px 0;
+}
+    
+.hero{
+  height:80vh;
+background:url('../img/gorra4.jpeg') center/cover no-repeat;
+
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  position:relative;
+}
+
+.hero::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0.6);
+}
+
+.hero-content{
+  position:relative;
+  z-index:2;
+  color:white;
+}
+
+.hero-content h2{
+  font-size:3rem;
+  margin-bottom:15px;
+}
+
+.boton-hero{
+  display:inline-block;
+  padding:12px 30px;
+  background:#e63946;
+  color:white;
+  text-decoration:none;
+  border-radius:30px;
+  transition:0.3s;
+}
+
+.boton-hero:hover{
+  transform:scale(1.1);
+}
+
+.notificacion{
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: black;
+  color: white;
+  padding: 15px 20px;
+  border-radius: 10px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.4s ease;
+}
+
+.notificacion{
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: black;
+  color: white;
+  padding: 15px 20px;
+  border-radius: 10px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.4s ease;
+}
+
+.notificacion.activa{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.beneficios{
+  display:flex;
+  justify-content:space-around;
+  padding:40px;
+  background:#111;
+  text-align:center;
+  font-weight:bold;
+}
+
+.footer-pro{
+  display:flex;
+  justify-content:space-around;
+  padding:40px;
+  background:#000;
+  color:white;
+}
+
+.footer-pro a{
+  color:white;
+  text-decoration:none;
+}
+

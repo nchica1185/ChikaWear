@@ -2,46 +2,192 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>CHIKAWEAR | Venta de Gorras</title>
-
+  <title>CHIKAWEAR</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/estilos.css">
-
 </head>
 <body>
 
-  <h1>🧢 CHIKAWEAR</h1>
-  <p>Venta de productos hechos para destacar🔥</p>
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="logo">CHIKAWEAR</div>
+  <div class="nav-links">
+    <a href="#catalogo">Catálogo</a>
+    <a href="#nosotros">Nosotros</a>
+    <a href="https://instagram.com/chikawear.co" target="_blank">Instagram</a>
+    <a href="https://wa.me/573238459904?text=Hola%20quiero%20informacion%20sobre%20las%20gorras%20CHIKAWEAR" target="_blank" class="whatsapp-btn">WhatsApp</a>
+  </div>
 
-  <p><strong>Ubicación:</strong> Armenia, Quindío</p>
-  <p><strong>Envíos:</strong> A todo Colombia 🇨🇴</p>
+  <button onclick="toggleCarrito()" class="carrito-icon">
+    🛒 <span id="contador">0</span>
+  </button>
+</nav>
 
-  <h2>Catálogo de Gorras</h2>
+<!-- HEADER -->
+<header>
+  <h1>CHIKAWEAR</h1>
+  <p>Armenia, Quindío • Envíos nacionales</p>
+</header>
 
-<div>
-  <h3>Gorra Urbana Negra</h3>
-  <img src="img/gorra1.jpeg" width="200">
-  <p>Precio: $60.000</p>
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <h2>Estilo urbano que marca diferencia</h2>
+    <p>Descubre la nueva colección CHIKAWEAR</p>
+    <a href="#catalogo" class="boton-hero">Comprar ahora</a>
+  </div>
+</section>
+
+<!-- CATALOGO -->
+<section class="catalogo" id="catalogo">
+
+  <div class="gorra">
+    <img src="img/gorra1.jpeg" alt="">
+    <h3>Gorra Negra Clásica</h3>
+    <p>$45.000 COP</p>
+    <button class="boton" onclick="agregar('Gorra Negra Clásica',45000)">Comprar</button>
+  </div>
+
+  <div class="gorra">
+    <img src="img/gorra2.jpeg" alt="">
+    <h3>Gorra Urbana Roja</h3>
+    <p>$50.000 COP</p>
+    <button class="boton" onclick="agregar('Gorra Urbana Roja',50000)">Comprar</button>
+  </div>
+
+  <div class="gorra">
+    <img src="img/gorra3.jpeg" alt="">
+    <h3>Gorra Blanca Minimal</h3>
+    <p>$48.000 COP</p>
+    <button class="boton" onclick="agregar('Gorra Blanca Minimal',48000)">Comprar</button>
+  </div>
+
+  <div class="gorra">
+    <img src="img/gorra4.jpeg" alt="">
+    <h3>Gorra Azul Street</h3>
+    <p>$52.000 COP</p>
+    <button class="boton" onclick="agregar('Gorra Azul Street',52000)">Comprar</button>
+  </div>
+
+</section>
+
+</section>
+
+<section class="beneficios">
+  <div>🚚 Envíos nacionales</div>
+  <div>🔒 Compra segura</div>
+  <div>🔄 Cambios garantizados</div>
+  <div>⭐ +100 clientes satisfechos</div>
+</section>
+
+
+<!-- NOSOTROS -->
+<section class="nosotros" id="nosotros">
+  <h2>Sobre Nosotros</h2>
+  <p>
+    En CHIKAWEAR ofrecemos gorras exclusivas con estilo urbano.
+    Estamos ubicados en Armenia, Quindío y realizamos envíos a todo Colombia.
+  </p>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer-pro">
+  <div>
+    <h3>CHIKAWEAR</h3>
+    <p>Estilo urbano en Armenia, Quindío</p>
+  </div>
+
+  <div>
+    <h4>Enlaces</h4>
+    <p><a href="#catalogo">Catálogo</a></p>
+    <p><a href="#nosotros">Nosotros</a></p>
+  </div>
+
+  <div>
+    <h4>Contacto</h4>
+    <p>+57 323 845 9904</p>
+    <p>@chikawear.co</p>
+  </div>
+</footer>
+
+
+<!-- NOTIFICACION -->
+<div id="notificacion" class="notificacion">
+  Producto agregado 🧢
 </div>
 
-<div>
-  <h3>Gorra Clásica Blanca</h3>
-  <img src="img/gorra2.jpeg" width="200">
-  <p>Precio: $55.000</p>
+<!-- CARRITO -->
+<div id="carritoPanel" class="carrito-panel">
+  <h2>Tu Carrito</h2>
+  <ul id="listaCarrito"></ul>
+  <p><strong>Total: $<span id="total">0</span></strong></p>
+  <button onclick="vaciarCarrito()" class="boton">Vaciar Carrito</button>
 </div>
 
- <div>
-  <h3>Gorra Roja CHIKAWEAR</h3>
-  <img src="img/gorra3.jpeg" width="200">
-  <p>Precio: $65.000</p>
-</div>
+<!-- SCRIPT -->
+<script>
 
-<div>
-  <h3>Gorra Azul CHIKAWEAR</h3>
-  <img src="img/gorra4.jpeg" width="200">
-  <p>Precio: $65.000</p>
-</div>
+let carrito = [];
+
+function agregar(nombre, precio){
+  carrito.push({nombre: nombre, precio: precio});
+  actualizarCarrito();
+
+  const notif = document.getElementById("notificacion");
+  notif.classList.add("activa");
+
+  setTimeout(function(){
+    notif.classList.remove("activa");
+  }, 2000);
+}
+
+  const notif = document.getElementById("notificacion");
+  notif.classList.add("activa");
+
+  setTimeout(function(){
+    notif.classList.remove("activa");
+  }, 2000);
 
 
+function actualizarCarrito(){
+  const lista = document.getElementById("listaCarrito");
+  const contador = document.getElementById("contador");
+  const totalElemento = document.getElementById("total");
+
+  lista.innerHTML = "";
+  let total = 0;
+
+  carrito.forEach(function(producto, index){
+    let li = document.createElement("li");
+
+    li.innerHTML = producto.nombre + " - $" + producto.precio +
+    ' <button onclick="eliminar(' + index + ')" style="margin-left:10px;background:red;color:white;border:none;padding:3px 6px;cursor:pointer;">X</button>';
+
+    lista.appendChild(li);
+    total += producto.precio;
+  });
+
+  contador.textContent = carrito.length;
+  totalElemento.textContent = total;
+}
+
+function vaciarCarrito(){
+  carrito = [];
+  actualizarCarrito();
+}
+
+function eliminar(index){
+  carrito.splice(index, 1);
+  actualizarCarrito();
+}
+
+function toggleCarrito(){
+  const panel = document.getElementById("carritoPanel");
+  panel.classList.toggle("activo");
+}
+
+</script>
 
 </body>
 </html>
+

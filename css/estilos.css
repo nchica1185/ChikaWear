@@ -279,3 +279,12 @@ background:url('../img/gorra4.jpeg') center/cover no-repeat;
   text-decoration:none;
 }
 
+#contador{
+  font-weight:bold;
+  transition:0.3s;
+}
+
+.carrito-icon:hover #contador{
+  transform:scale(1.3);
+}
+

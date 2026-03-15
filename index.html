@@ -1,240 +1,258 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>CHIKAWEAR</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/estilos.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHIKAWEAR | Official Store</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilos.css">
 </head>
 <body>
 
-<!-- NAVBAR -->
 <nav class="navbar">
-  <div class="logo">CHIKAWEAR</div>
-  <div class="nav-links">
-    <a href="#catalogo">Catálogo</a>
-    <a href="#nosotros">Nosotros</a>
-    <a href="https://instagram.com/chikawear.co" target="_blank">Instagram</a>
-    <a href="https://wa.me/573238459904?text=Hola%20quiero%20informacion%20sobre%20las%20gorras%20CHIKAWEAR" target="_blank" class="whatsapp-btn">WhatsApp</a>
-   <button onclick="toggleLogin()">Login</button>
-
-
-  </div>
-
-  <button onclick="toggleCarrito()" class="carrito-icon">
-    🛒 <span id="contador">0</span>
-  </button>
+    <div class="logo">CHIKAWEAR</div>
+    <div class="nav-links">
+        <a href="#catalogo">Catálogo</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="https://instagram.com/chikawear.co" target="_blank">Instagram</a>
+        <a href="https://wa.me/573238459904" target="_blank" class="whatsapp-btn">WhatsApp</a>
+        <button onclick="toggleLogin()" class="btn-admin-secret">.</button>
+    </div>
+    <button onclick="toggleCarrito()" class="carrito-icon">🛒 <span id="contador">0</span></button>
 </nav>
 
-<!-- HEADER -->
 <header>
-  <h1>CHIKAWEAR</h1>
-  <p>Armenia, Quindío • Envíos nacionales</p>
+    <h1>CHIKAWEAR</h1>
+    <p>Armenia, Quindío • Envíos nacionales</p>
 </header>
 
-<!-- HERO -->
 <section class="hero">
-  <div class="hero-content">
-    <h2>Estilo urbano que marca diferencia</h2>
-    <p>Descubre la nueva colección CHIKAWEAR</p>
-    <a href="#catalogo" class="boton-hero">Comprar ahora</a>
-  </div>
+    <div class="hero-content">
+        <h2>URBAN LUXURY</h2>
+        <p>Edición Limitada 2026</p>
+        <a href="#catalogo" class="boton-hero">COMPRAR AHORA</a>
+    </div>
 </section>
-
-<!-- CATALOGO -->
 
 <section class="catalogo" id="catalogo">
-
-  <div class="gorra">
-    <img src="img/gorra1.jpeg" alt="">
-    <h3>Gorra Hugo Boss Diamantes</h3>
-    <p>$780.000 COP</p>
-    <button class="boton" onclick="agregar('Gorra Hugo Boss Diamantes',780000)">Comprar</button>
-  </div>
-
-  <div class="gorra">
-    <img src="img/gorra2.jpeg" alt="">
-    <h3>Gorra Coach Plana Gris</h3>
-    <p>$370.000 COP</p>
-    <button class="boton" onclick="agregar('Gorra Coach Plana Gris',370000)">Comprar</button>
-  </div>
-
-  <div class="gorra">
-    <img src="img/gorra3.jpeg" alt="">
-    <h3>Gorra Hugo Boss Vaca Azul</h3>
-    <p>$2.700.000 COP</p>
-    <button class="boton" onclick="agregar('Gorra Blanca Minimal',2700000)">Comprar</button>
-  </div>
-
-  <div class="gorra">
-    <img src="img/gorra4.jpeg" alt="">
-    <h3>Gorra Hugo Boss Toro</h3>
-    <p>$9.800.000COP</p>
-    <button class="boton" onclick="agregar('Gorra Azul Street',9800000)">Comprar</button>
-  </div>
-
+    <div id="productos">
+        <div class="gorra">
+            <div class="img-box"><img src="img/gorra1.jpeg"></div>
+            <h3>Gorra Hugo Boss Diamantes</h3>
+            <p>$780.000 COP</p>
+            <button class="boton" onclick="agregar('HB Diamantes', 780000)">Comprar</button>
+        </div>
+        <div class="gorra">
+            <div class="img-box"><img src="img/gorra2.jpeg"></div>
+            <h3>Gorra Coach Plana Gris</h3>
+            <p>$370.000 COP</p>
+            <button class="boton" onclick="agregar('Coach Plana', 370000)">Comprar</button>
+        </div>
+        <div class="gorra">
+            <div class="img-box"><img src="img/gorra3.jpeg"></div>
+            <h3>Gorra Hugo Boss Vaca Azul</h3>
+            <p>$2.700.000 COP</p>
+            <button class="boton" onclick="agregar('HB Vaca Azul', 2700000)">Comprar</button>
+        </div>
+        <div class="gorra">
+            <div class="img-box"><img src="img/gorra4.jpeg"></div>
+            <h3>Gorra Hugo Boss Toro</h3>
+            <p>$9.800.000 COP</p>
+            <button class="boton" onclick="agregar('HB Toro', 9800000)">Comprar</button>
+        </div>
+    </div>
 </section>
-
-
 
 <section class="beneficios">
-  <div>🚚 Envíos nacionales</div>
-  <div>🔒 Compra segura</div>
-  <div>🔄 Cambios garantizados</div>
-  <div>⭐ +100 clientes satisfechos</div>
+    <div>🚚 ENVÍOS NACIONALES</div>
+    <div>🔒 COMPRA SEGURA</div>
+    <div>🔄 CAMBIOS GARANTIZADOS</div>
+    <div>⭐ CLIENTES SATISFECHOS</div>
 </section>
 
-
-<!-- NOSOTROS -->
 <section class="nosotros" id="nosotros">
-  <h2>Sobre Nosotros</h2>
-  <p>
-    En CHIKAWEAR ofrecemos gorras exclusivas con estilo urbano.
-    Estamos ubicados en Armenia, Quindío y realizamos envíos a todo Colombia.
-  </p>
+    <h2>Sobre Nosotros</h2>
+    <p>En CHIKAWEAR ofrecemos gorras exclusivas con estilo urbano. Somos referentes de moda en Armenia, Quindío, llevando el estilo premium a todo Colombia.</p>
 </section>
 
-<!-- FOOTER -->
 <footer class="footer-pro">
-  <div>
-    <h3>CHIKAWEAR</h3>
-    <p>Estilo urbano en Armenia, Quindío</p>
-  </div>
-
-  <div>
-    <h4>Enlaces</h4>
-    <p><a href="#catalogo">Catálogo</a></p>
-    <p><a href="#nosotros">Nosotros</a></p>
-  </div>
-
-  <div>
-    <h4>Contacto</h4>
-    <p>+57 323 845 9904</p>
-    <p>@chikawear.co</p>
-  </div>
+    <div>
+        <h3>CHIKAWEAR</h3>
+        <p>Streetwear Premium & Luxury Caps</p>
+    </div>
+    <div>
+        <h4>Contacto</h4>
+        <p>WhatsApp: +57 323 845 9904</p>
+        <p>Armenia, Quindío</p>
+    </div>
 </footer>
 
-
-<!-- NOTIFICACION -->
-<div id="notificacion" class="notificacion">
-  Producto agregado 🧢
-</div>
-
-<!-- LOGIN -->
 <div id="loginPanel" class="login-panel">
-  <h2>Iniciar Sesión</h2>
-  <input type="text" id="usuario" placeholder="Usuario">
-  <input type="password" id="password" placeholder="Contraseña">
-  <button onclick="login()" class="boton">Entrar</button>
-  <p id="mensajeLogin"></p>
+    <div class="panel-header">
+        <h2>ADMIN LOGIN</h2>
+        <button onclick="toggleLogin()" class="btn-x">&times;</button>
+    </div>
+    <div class="panel-content">
+        <input type="text" id="usuario" placeholder="Usuario">
+        <input type="password" id="password" placeholder="Contraseña">
+        <button onclick="login()" class="boton">ENTRAR AL PANEL</button>
+        <p id="mensajeLogin" style="margin-top:15px; font-weight:bold;"></p>
+    </div>
 </div>
-<!-- CARRITO -->
+
 <div id="carritoPanel" class="carrito-panel">
-  <h2>Tu Carrito</h2>
-  <ul id="listaCarrito"></ul>
-  <p><strong>Total: $<span id="total">0</span></strong></p>
+    <div class="panel-header">
+        <h2>MI CARRITO</h2>
+        <button onclick="toggleCarrito()" class="btn-x">&times;</button>
+    </div>
+    <div class="carrito-scroll">
+        <ul id="listaCarrito"></ul>
+    </div>
+    <div class="herramientas-carrito">
+        <h3>OPCIONES DE ENVÍO</h3>
+        <select id="selectDepto" onchange="actualizarEnvio()">
+            <option value="0">Seleccionar Envío</option>
+            <option value="12000">Armenia (Local) - $12.000</option>
+            <option value="18000">Nacional (Ciudades principales) - $18.000</option>
+            <option value="25000">Reexpedición (Pueblos) - $25.000</option>
+        </select>
+        
+        <div class="resumen-precios">
+            <p>Subtotal: <span id="resSub">$0</span></p>
+            <p>Envío: <span id="resEnv">$0</span></p>
+            <p class="total-pro">TOTAL: <span id="total">$0</span></p>
+        </div>
 
-  <input type="text" id="codigoDescuento" placeholder="Código de descuento">
-  <button onclick="aplicarDescuento()" class="boton">Aplicar</button>
-  <p id="mensajeDescuento"></p>
-
-  <button onclick="vaciarCarrito()" class="boton">Vaciar Carrito</button>
+        <h3>DATOS DE CLIENTE</h3>
+        <input type="text" id="clienteNombre" placeholder="Nombre completo">
+        <input type="text" id="clienteTel" placeholder="WhatsApp">
+        <input type="text" id="clienteDir" placeholder="Dirección Exacta">
+        
+        <button onclick="hacerPedido()" class="boton" style="background:#25D366; margin-top:10px;">PEDIR POR WHATSAPP</button>
+        <button onclick="vaciarCarrito()" class="btn-link" style="color:#555; width:100%; margin-top:10px; background:none; border:none; cursor:pointer;">VACIAR CARRITO</button>
+    </div>
 </div>
 
-<!-- SCRIPT -->
+<div id="notificacion" class="notificacion">Añadido al carrito 🧢</div>
+
 <script>
-
+const API = "http://localhost:3000";
 let carrito = [];
-let descuento = 0;
 
-function agregar(nombre, precio){
-  carrito.push({nombre: nombre, precio: precio});
-  actualizarCarrito();
+// CARGAR PRODUCTOS DESDE EL BACKEND AL INICIAR
+async function cargarProductosTienda() {
+    try {
+        const res = await fetch(`${API}/productos`);
+        const productos = await res.json();
+        if(productos.length > 0) {
+            const contenedor = document.getElementById("productos");
+            contenedor.innerHTML = ""; // Limpiar los de prueba
+            productos.forEach(p => {
+                contenedor.innerHTML += `
+                <div class="gorra">
+                    <div class="img-box"><img src="${p.imagen}"></div>
+                    <h3>${p.nombre}</h3>
+                    <p>$${p.precio.toLocaleString()} COP</p>
+                    <button class="boton" onclick="agregar('${p.nombre}', ${p.precio})">Comprar</button>
+                </div>`;
+            });
+        }
+    } catch (e) { console.log("Usando productos locales..."); }
+}
 
-  const notif = document.getElementById("notificacion");
-  notif.classList.add("activa");
-
-  setTimeout(function(){
-    notif.classList.remove("activa");
-  }, 2000);
+function agregar(n, p){
+    carrito.push({nombre: n, precio: p});
+    actualizarCarrito();
+    const noti = document.getElementById("notificacion");
+    noti.classList.add("activa");
+    setTimeout(()=>noti.classList.remove("activa"), 2000);
 }
 
 function actualizarCarrito(){
-  const lista = document.getElementById("listaCarrito");
-  const contador = document.getElementById("contador");
-  const totalElemento = document.getElementById("total");
-
-  lista.innerHTML = "";
-  let total = 0;
-
-  carrito.forEach(function(producto, index){
-    let li = document.createElement("li");
-
-    li.innerHTML = producto.nombre + " - $" + producto.precio +
-    ' <button onclick="eliminar(' + index + ')" style="margin-left:10px;background:red;color:white;border:none;padding:3px 6px;cursor:pointer;">X</button>';
-
-    lista.appendChild(li);
-    total += producto.precio;
-  });
-
-  contador.textContent = carrito.length;
-  let totalFinal = total - (total * descuento);
-  totalElemento.textContent = totalFinal;
+    const lista = document.getElementById("listaCarrito");
+    const subText = document.getElementById("resSub");
+    const envText = document.getElementById("resEnv");
+    const totalText = document.getElementById("total");
+    const cont = document.getElementById("contador");
+    
+    lista.innerHTML = "";
+    let sub = 0;
+    
+    carrito.forEach((prod, i)=>{
+        sub += prod.precio;
+        let li = document.createElement("li");
+        li.style.display = "flex"; li.style.justifyContent = "space-between"; li.style.marginBottom = "10px";
+        li.innerHTML = `<span>${prod.nombre}</span> <strong>$${prod.precio.toLocaleString()}</strong> <button onclick="eliminar(${i})" style="color:red; background:none; border:none; cursor:pointer;">X</button>`;
+        lista.appendChild(li);
+    });
+    
+    let env = parseInt(document.getElementById("selectDepto").value) || 0;
+    cont.textContent = carrito.length;
+    subText.textContent = "$" + sub.toLocaleString();
+    envText.textContent = "$" + env.toLocaleString();
+    totalText.textContent = "$" + (sub + env).toLocaleString();
 }
 
-function vaciarCarrito(){
-  carrito = [];
-  actualizarCarrito();
+function vaciarCarrito(){ carrito = []; actualizarCarrito(); }
+function actualizarEnvio(){ actualizarCarrito(); }
+function eliminar(i){ carrito.splice(i,1); actualizarCarrito(); }
+function toggleCarrito(){ document.getElementById("carritoPanel").classList.toggle("activo"); }
+function toggleLogin(){ document.getElementById("loginPanel").classList.toggle("activo"); }
+
+function login() {
+    const u = document.getElementById("usuario").value.trim();
+    const p = document.getElementById("password").value.trim();
+    const m = document.getElementById("mensajeLogin");
+
+    if (u === "admin" && p === "1234") {
+        sessionStorage.setItem("adminLogueado", "true");
+        m.innerHTML = "ACCESO CONCEDIDO... 🔥";
+        m.style.color = "#25D366";
+        setTimeout(() => { window.location.href = "admin.html"; }, 800);
+    } else {
+        m.innerHTML = "DATOS INCORRECTOS ❌";
+        m.style.color = "#e63946";
+    }
 }
 
-function eliminar(index){
-  carrito.splice(index, 1);
-  actualizarCarrito();
+// FUNCIÓN PARA ENVIAR AL WHATSAPP Y GUARDAR EN EL ADMIN
+async function hacerPedido(){
+    if(carrito.length === 0) return alert("El carrito está vacío");
+    const nom = document.getElementById("clienteNombre").value;
+    const tel = document.getElementById("clienteTel").value;
+    const dir = document.getElementById("clienteDir").value;
+    
+    if(!nom || !tel || !dir) return alert("Por favor completa tus datos de envío");
+    
+    // 1. Guardar en el panel de Admin (API)
+    const pedidoData = {
+        id: Date.now().toString(),
+        cliente: nom,
+        telefono: tel,
+        direccion: dir,
+        productos: carrito,
+        fecha: new Date().toLocaleDateString()
+    };
+
+    try {
+        await fetch(`${API}/pedidos`, {
+            method: "POST",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify(pedidoData)
+        });
+    } catch (e) { console.log("No se pudo guardar en el panel, pero enviando WhatsApp..."); }
+
+    // 2. Abrir WhatsApp
+    let msj = `*NUEVO PEDIDO CHIKAWEAR*%0A%0A`;
+    carrito.forEach(p => msj += `- ${p.nombre} ($${p.precio.toLocaleString()})%0A`);
+    msj += `%0A*ENVÍO:* ${document.getElementById("resEnv").textContent}`;
+    msj += `%0A*TOTAL:* ${document.getElementById("total").textContent}`;
+    msj += `%0A%0A*DATOS:*%0A- Cliente: ${nom}%0A- Dir: ${dir}%0A- WhatsApp: ${tel}`;
+    
+    window.open(`https://wa.me/573238459904?text=${msj}`);
 }
 
-function toggleCarrito(){
-  const panel = document.getElementById("carritoPanel");
-  panel.classList.toggle("activo");
-}
-
-function toggleLogin(){
-  const panel = document.getElementById("loginPanel");
-  panel.classList.toggle("activo");
-}
-
-function login(){
-  const user = document.getElementById("usuario").value;
-  const pass = document.getElementById("password").value;
-  const mensaje = document.getElementById("mensajeLogin");
-
-  if(user === "admin" && pass === "1234"){
-    mensaje.textContent = "Bienvenido 🔥";
-  } else {
-    mensaje.textContent = "Datos incorrectos ❌";
-  }
-}
-
-function aplicarDescuento(){
-  const codigo = document.getElementById("codigoDescuento").value;
-  const mensaje = document.getElementById("mensajeDescuento");
-
-  if(codigo === "CHIKA10"){
-    descuento = 0.10;
-    mensaje.textContent = "Descuento aplicado 10% 🎉";
-  } else if(codigo === "VIP20"){
-    descuento = 0.20;
-    mensaje.textContent = "Descuento aplicado 20% 🔥";
-  } else {
-    descuento = 0;
-    mensaje.textContent = "Código inválido ❌";
-  }
-
-  actualizarCarrito();
-}
-
+cargarProductosTienda();
 </script>
-
-
 </body>
 </html>
-

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito · CHIKAWEAR</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/carrito.css">
+</head>
+<body class="cart-page">
+
+<nav class="navbar">
+    <a class="logo" href="index.html">CHIKAWEAR</a>
+    <div class="nav-links">
+        <a href="index.html">Inicio</a>
+        <a href="https://instagram.com/chikawear.co" target="_blank">Instagram</a>
+        <span class="cart-badge" data-cart-count>0</span>
+    </div>
+</nav>
+
+<header class="cart-hero">
+    <div class="hero-copy">
+        <p class="hero-kicker">CHIKAWEAR · Envíos directos</p>
+        <h1>Confirma tu pedido con calma</h1>
+        <p>Te acompañamos hasta que tengas claro el total: revisa lo que elegiste, elige ciudad y queda listo para pagar. Esta página habla con la voz cálida y cercana de ChikaWear, no con palabras de máquina.</p>
+        <div class="hero-cta">
+            <a href="index.html" class="boton outline">Seguir comprando</a>
+            <a href="#cart-panel" class="boton tarjeta">Ver pedido</a>
+        </div>
+    </div>
+    <div class="hero-graphic">
+        <div class="hero-block hero-block--red"></div>
+        <div class="hero-block hero-block--gloss"></div>
+    </div>
+</header>
+
+<main class="cart-shell">
+
+    <section id="cart-panel" class="cart-panel">
+        <div class="panel-head">
+            <h2>Artículos seleccionados</h2>
+            <p id="shippingChoicePage">Selecciona un departamento y ciudad para ver el costo final</p>
+        </div>
+        <div id="cartItemsList" class="cart-items"></div>
+        <div class="cart-actions">
+            <button class="boton carrito-primary" onclick="hacerPedido()">Pedir por WhatsApp</button>
+            <button class="boton carrito-secondary" onclick="iniciarCheckout()">Pagar en línea</button>
+            <button class="btn-link" onclick="vaciarCarrito()">Vaciar carrito</button>
+        </div>
+    </section>
+
+    <section class="cart-summary">
+        <div class="summary-head">
+            <h2>Costos y envíos</h2>
+            <p>Utiliza todos los campos para obtener el total real del pedido.</p>
+        </div>
+        <div class="shipping-selectors">
+            <select id="selectDeptoPage">
+                <option value="">Selecciona departamento</option>
+            </select>
+            <select id="selectCiudadPage" disabled>
+                <option value="">Selecciona ciudad</option>
+            </select>
+        </div>
+        <p class="shipping-note" id="shippingWarningPage">Selecciona un departamento para ver el costo base de envío.</p>
+        <div class="summary-card">
+            <div class="summary-row">
+                <span>Subtotal</span>
+                <strong id="summarySubtotal">$0</strong>
+            </div>
+            <div class="summary-row">
+                <span>Envío</span>
+                <strong id="summaryEnvio">$0</strong>
+            </div>
+            <div class="summary-line"></div>
+            <div class="summary-row total">
+                <span>Total</span>
+                <strong id="summaryTotal">$0</strong>
+            </div>
+        </div>
+        <div class="client-data">
+            <h3>Datos del cliente</h3>
+            <input id="clienteNombre" placeholder="Nombre completo">
+            <input id="clienteTel" placeholder="WhatsApp">
+            <input id="clienteDir" placeholder="Dirección exacta">
+        </div>
+    </section>
+
+    <section class="shipping-grid" id="shippingGrid" aria-hidden="true"></section>
+
+</main>
+
+<footer class="cart-footer">
+    <div>
+        <h4>CHIKAWEAR</h4>
+        <p>Streetwear premium · Entregas 24 hrs (Colombia)</p>
+    </div>
+    <div>
+        <h4>Soporte</h4>
+        <p>WhatsApp +57 323 845 9904</p>
+        <p>Armenia · Quindío</p>
+    </div>
+</footer>
+
+<script src="js/cart.js"></script>
+<script src="js/cart-actions.js"></script>
+<script src="js/carrito-page.js"></script>
+</body>
+</html>

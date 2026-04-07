@@ -1,0 +1,33 @@
+[
+  {
+    "id": "1773722772613",
+    "nombre": "gazzzzzzzzzzz",
+    "precio": 200,
+    "imagen": "img/1773722772568-gorra4.jpeg",
+    "descripcion": "Edición urbana con logo frontal bordado y paneles respirables.",
+    "createdAt": "2026-03-17T04:46:12.613Z"
+  },
+  {
+    "id": "1773850603483",
+    "nombre": "qq",
+    "precio": 11,
+    "imagen": "img/1773850603476-4945107074556210370_121.webp",
+    "createdAt": "2026-03-18T16:16:43.483Z"
+  },
+  {
+    "id": "1773876722537",
+    "nombre": "s",
+    "precio": 22,
+    "imagen": "img/1773876722519-literally-just-balloony-thats-the-post-v0-0tduj9l5zitc1.webp",
+    "descripcion": "cabezon",
+    "createdAt": "2026-03-18T23:32:02.537Z"
+  },
+  {
+    "id": "1774471918061",
+    "nombre": "Gorra boss",
+    "precio": 430,
+    "imagen": "img/1774471918002-boss.jpg",
+    "descripcion": "Pura Exclusividad ‼️ Marcando la diferencia 🔥",
+    "createdAt": "2026-03-25T20:51:58.061Z"
+  }
+]

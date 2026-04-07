@@ -12,62 +12,137 @@
 <nav class="navbar">
     <div class="logo">CHIKAWEAR</div>
     <div class="nav-links">
+        <a href="#destacados">Destacados</a>
         <a href="#catalogo">Catálogo</a>
         <a href="#nosotros">Nosotros</a>
         <a href="https://instagram.com/chikawear.co" target="_blank">Instagram</a>
         <a href="https://wa.me/573238459904" target="_blank" class="whatsapp-btn">WhatsApp</a>
-        <button onclick="toggleLogin()" class="btn-admin-secret">.</button>
     </div>
-    <button onclick="toggleCarrito()" class="carrito-icon">🛒 <span id="contador">0</span></button>
 </nav>
 
 <header>
     <h1>CHIKAWEAR</h1>
-    <p>Armenia, Quindío • Envíos nacionales</p>
+    <p>Armenia, Quindío • Envíos nacionales desde 24 h</p>
 </header>
+
+<div class="info-strip">Streetwear premium con producción consciente, envíos certificados y atención directa por WhatsApp.</div>
 
 <section class="hero">
     <div class="hero-content">
+        <p class="hero-kicker">Capsule 2026 · Urban Luxury</p>
         <h2>URBAN LUXURY</h2>
-        <p>Edición Limitada 2026</p>
-        <a href="#catalogo" class="boton-hero">COMPRAR AHORA</a>
+        <p class="hero-description">Capas de lujo hechas a mano en Quindío, con tejidos certificados, detalles tallados y una paleta sobria para acompañar cualquier look.</p>
+        <div class="hero-actions">
+            <a href="#catalogo" class="boton-hero">Comprar ahora</a>
+            <a href="#nosotros" class="boton-hero outline">Nuestra historia</a>
+            <button type="button" class="boton-hero outline cart-cta" data-open-cart>Ver pedido en vivo</button>
+        </div>
+        <div class="hero-flair">
+            <span>Producción local</span>
+            <span>Envíos 24-48 h</span>
+            <span>Pagos seguros</span>
+        </div>
     </div>
 </section>
 
+<section class="cart-teaser" aria-label="Carrito oficial">
+    <div class="cart-teaser-content">
+        <p class="cart-teaser-kicker">CHIKAWEAR · Carrito oficial</p>
+        <h2>Tu selección lista para cerrar con calma</h2>
+        <p>Visualiza cada artículo, confirma ciudad y paga con confianza: el recorrido está inspirado en el look que nos mostraste, con foco humano y premium.</p>
+        <div class="cart-teaser-actions">
+            <button type="button" class="cart-teaser-btn" data-open-cart>Revisar pedido actual</button>
+            <a href="#catalogo" class="cart-teaser-link">Seguir explorando</a>
+        </div>
+    </div>
+    <div class="cart-teaser-card">
+        <div class="cart-preview-row">
+            <span>Artículos en vivo</span>
+            <strong id="previewItemsCount">0</strong>
+        </div>
+        <div class="cart-preview-row">
+            <span>Subtotal</span>
+            <strong id="previewSubtotal">$0</strong>
+        </div>
+        <div class="cart-preview-row">
+            <span>Envío actual</span>
+            <strong id="previewShipping">$0</strong>
+        </div>
+        <div class="cart-preview-total">
+            <span>Total estimado</span>
+            <strong id="previewTotal">$0</strong>
+        </div>
+    </div>
+</section>
+
+<section class="destacados" id="destacados">
+    <article>
+        <h3>Hecho por comunidad</h3>
+        <p>Equipo local con procesos responsables y acabados firmes que merecen exhibirse.</p>
+    </article>
+    <article>
+        <h3>Logística confiable</h3>
+        <p>Seguimiento real, empaques reforzados y prioridad para compras urgentes.</p>
+    </article>
+    <article>
+        <h3>Servicio VIP</h3>
+        <p>Asesoría por WhatsApp, cambios sin letra chica y despacho constante.</p>
+    </article>
+</section>
+
+<section class="catalogo-intro">
+    <div>
+        <h3>Catálogo curado</h3>
+        <p>Una selección restringida que busca calidad sobre cantidad; cada gorra se diseña para contar una historia.</p>
+        <div class="catalogo-tags">
+            <span>Calidad premium</span>
+            <span>Edición limitada</span>
+        </div>
+    </div>
+    <p class="catalogo-note">Actualizamos inventario cada semana y mostramos stock real en la tienda.</p>
+</section>
+
 <section class="catalogo" id="catalogo">
-    <div id="productos">
-        <div class="gorra">
-            <div class="img-box"><img src="img/gorra1.jpeg"></div>
-            <h3>Gorra Hugo Boss Diamantes</h3>
-            <p>$780.000 COP</p>
-            <button class="boton" onclick="agregar('HB Diamantes', 780000)">Comprar</button>
+    <div class="catalogo-grid" id="productos"></div>
+    <div id="productLoader" class="product-loader hide" aria-live="polite" aria-busy="true">
+        <span></span>
+        <p>Cargando productos...</p>
+    </div>
+    <div id="catalogEmpty" class="catalog-empty hide" aria-live="polite">Todavía no hay productos disponibles.</div>
+</section>
+
+<section id="detalleProducto" class="detalle-producto hide">
+    <div class="detalle-card">
+        <div class="detalle-media">
+            <img id="detalleImg" src="img/no-image.png" alt="Producto">
         </div>
-        <div class="gorra">
-            <div class="img-box"><img src="img/gorra2.jpeg"></div>
-            <h3>Gorra Coach Plana Gris</h3>
-            <p>$370.000 COP</p>
-            <button class="boton" onclick="agregar('Coach Plana', 370000)">Comprar</button>
-        </div>
-        <div class="gorra">
-            <div class="img-box"><img src="img/gorra3.jpeg"></div>
-            <h3>Gorra Hugo Boss Vaca Azul</h3>
-            <p>$2.700.000 COP</p>
-            <button class="boton" onclick="agregar('HB Vaca Azul', 2700000)">Comprar</button>
-        </div>
-        <div class="gorra">
-            <div class="img-box"><img src="img/gorra4.jpeg"></div>
-            <h3>Gorra Hugo Boss Toro</h3>
-            <p>$9.800.000 COP</p>
-            <button class="boton" onclick="agregar('HB Toro', 9800000)">Comprar</button>
+        <div class="detalle-info">
+            <p class="detalle-kicker">Ficha del producto</p>
+            <h3 id="detalleNombre">Producto</h3>
+            <p id="detalleDescripcion" class="detalle-descripcion">Detalle cargando...</p>
+            <p id="detallePrecio" class="detalle-precio">$0</p>
+            <div class="detalle-actions">
+                <button id="detalleAgregar" class="boton">Agregar al carrito</button>
+                <button class="boton outline" data-open-cart>Ver carrito</button>
+            </div>
         </div>
     </div>
 </section>
 
 <section class="beneficios">
-    <div>🚚 ENVÍOS NACIONALES</div>
-    <div>🔒 COMPRA SEGURA</div>
+    <div>✔ ENVÍOS NACIONALES</div>
+    <div>💳 COMPRA SEGURA</div>
     <div>🔄 CAMBIOS GARANTIZADOS</div>
     <div>⭐ CLIENTES SATISFECHOS</div>
+</section>
+
+<section class="cobertura" id="cobertura">
+    <div class="cobertura-content">
+        <h2>Envíos sin fricción</h2>
+        <p>Coordinamos según tu ciudad, con empaque premium y seguimiento. Si necesitas algo urgente, escríbenos y lo movemos.</p>
+        <div class="cobertura-flex" id="coberturaGrid"></div>
+        <a class="cobertura-cta" href="https://wa.me/573238459904" target="_blank">Hablar de envíos</a>
+    </div>
 </section>
 
 <section class="nosotros" id="nosotros">
@@ -102,157 +177,72 @@
 
 <div id="carritoPanel" class="carrito-panel">
     <div class="panel-header">
-        <h2>MI CARRITO</h2>
+        <div>
+            <p class="panel-tag">Carrito vivo</p>
+            <h2>Tu selección</h2>
+        </div>
         <button onclick="toggleCarrito()" class="btn-x">&times;</button>
     </div>
-    <div class="carrito-scroll">
-        <ul id="listaCarrito"></ul>
-    </div>
-    <div class="herramientas-carrito">
-        <h3>OPCIONES DE ENVÍO</h3>
-        <select id="selectDepto" onchange="actualizarEnvio()">
-            <option value="0">Seleccionar Envío</option>
-            <option value="12000">Armenia (Local) - $12.000</option>
-            <option value="18000">Nacional (Ciudades principales) - $18.000</option>
-            <option value="25000">Reexpedición (Pueblos) - $25.000</option>
-        </select>
-        
-        <div class="resumen-precios">
-            <p>Subtotal: <span id="resSub">$0</span></p>
-            <p>Envío: <span id="resEnv">$0</span></p>
-            <p class="total-pro">TOTAL: <span id="total">$0</span></p>
+    <div class="carrito-body">
+        <div class="carrito-scroll">
+            <ul id="listaCarrito"></ul>
         </div>
-
-        <h3>DATOS DE CLIENTE</h3>
-        <input type="text" id="clienteNombre" placeholder="Nombre completo">
-        <input type="text" id="clienteTel" placeholder="WhatsApp">
-        <input type="text" id="clienteDir" placeholder="Dirección Exacta">
-        
-        <button onclick="hacerPedido()" class="boton" style="background:#25D366; margin-top:10px;">PEDIR POR WHATSAPP</button>
-        <button onclick="vaciarCarrito()" class="btn-link" style="color:#555; width:100%; margin-top:10px; background:none; border:none; cursor:pointer;">VACIAR CARRITO</button>
+        <div class="carrito-shipping">
+            <h3>Opciones de envío</h3>
+            <div class="shipping-selectors">
+                <select id="selectDepto" onchange="actualizarCiudades(this.value)">
+                    <option value="">Selecciona departamento</option>
+                </select>
+                <select id="selectCiudad" disabled onchange="actualizarCiudad(this.value)">
+                    <option value="">Selecciona ciudad</option>
+                </select>
+            </div>
+            <p class="shipping-note" id="shippingWarning">Selecciona un departamento y ciudad para mostrar el valor del envío.</p>
+        </div>
+        <div class="carrito-summary">
+            <div class="summary-row">
+                <span>Subtotal</span>
+                <strong id="resSub">$0</strong>
+            </div>
+            <div class="summary-row">
+                <span>Envío</span>
+                <strong id="resEnv">$0</strong>
+            </div>
+            <div class="summary-row total-line">
+                <span>Total</span>
+                <strong id="total">$0</strong>
+            </div>
+            <p class="shipping-choice" id="shippingChoice">Selecciona un departamento y ciudad para ver el costo final.</p>
+        </div>
+        <div class="carrito-actions">
+            <button onclick="hacerPedido()" class="boton carrito-primary">Pedí por WhatsApp</button>
+            <button onclick="iniciarCheckout()" class="boton carrito-secondary">Pagar en línea</button>
+            <button onclick="vaciarCarrito()" class="btn-link carrito-link">Vaciar carrito</button>
+        </div>
+        <h3>Datos del cliente</h3>
+        <input id="clienteNombre" placeholder="Nombre completo">
+        <input id="clienteTel" placeholder="WhatsApp">
+        <input id="clienteDir" placeholder="Dirección exacta">
     </div>
 </div>
 
-<div id="notificacion" class="notificacion">Añadido al carrito 🧢</div>
+<div id="notificacion" class="notificacion">Añadido al carrito 🛍️</div>
 
-<script>
-const API = "http://localhost:3000";
-let carrito = [];
+<div id="productModal" class="product-modal" aria-hidden="true">
+    <div class="product-modal-overlay" data-modal-close></div>
+    <div class="product-modal-content">
+        <button class="modal-close" data-modal-close>&times;</button>
+        <h3 id="modalTitle">Producto</h3>
+        <p id="modalDescription"></p>
+        <div class="modal-price" id="modalPrice"></div>
+        <button class="boton primary" id="modalAdd">Agregar al carrito</button>
+    </div>
+</div>
 
-// CARGAR PRODUCTOS DESDE EL BACKEND AL INICIAR
-async function cargarProductosTienda() {
-    try {
-        const res = await fetch(`${API}/productos`);
-        const productos = await res.json();
-        if(productos.length > 0) {
-            const contenedor = document.getElementById("productos");
-            contenedor.innerHTML = ""; // Limpiar los de prueba
-            productos.forEach(p => {
-                contenedor.innerHTML += `
-                <div class="gorra">
-                    <div class="img-box"><img src="${p.imagen}"></div>
-                    <h3>${p.nombre}</h3>
-                    <p>$${p.precio.toLocaleString()} COP</p>
-                    <button class="boton" onclick="agregar('${p.nombre}', ${p.precio})">Comprar</button>
-                </div>`;
-            });
-        }
-    } catch (e) { console.log("Usando productos locales..."); }
-}
+<script src="js/cart.js"></script>
+<script src="js/cart-actions.js"></script>
+<script src="js/shop.js"></script>
+<script src="js/index-page.js"></script>
 
-function agregar(n, p){
-    carrito.push({nombre: n, precio: p});
-    actualizarCarrito();
-    const noti = document.getElementById("notificacion");
-    noti.classList.add("activa");
-    setTimeout(()=>noti.classList.remove("activa"), 2000);
-}
-
-function actualizarCarrito(){
-    const lista = document.getElementById("listaCarrito");
-    const subText = document.getElementById("resSub");
-    const envText = document.getElementById("resEnv");
-    const totalText = document.getElementById("total");
-    const cont = document.getElementById("contador");
-    
-    lista.innerHTML = "";
-    let sub = 0;
-    
-    carrito.forEach((prod, i)=>{
-        sub += prod.precio;
-        let li = document.createElement("li");
-        li.style.display = "flex"; li.style.justifyContent = "space-between"; li.style.marginBottom = "10px";
-        li.innerHTML = `<span>${prod.nombre}</span> <strong>$${prod.precio.toLocaleString()}</strong> <button onclick="eliminar(${i})" style="color:red; background:none; border:none; cursor:pointer;">X</button>`;
-        lista.appendChild(li);
-    });
-    
-    let env = parseInt(document.getElementById("selectDepto").value) || 0;
-    cont.textContent = carrito.length;
-    subText.textContent = "$" + sub.toLocaleString();
-    envText.textContent = "$" + env.toLocaleString();
-    totalText.textContent = "$" + (sub + env).toLocaleString();
-}
-
-function vaciarCarrito(){ carrito = []; actualizarCarrito(); }
-function actualizarEnvio(){ actualizarCarrito(); }
-function eliminar(i){ carrito.splice(i,1); actualizarCarrito(); }
-function toggleCarrito(){ document.getElementById("carritoPanel").classList.toggle("activo"); }
-function toggleLogin(){ document.getElementById("loginPanel").classList.toggle("activo"); }
-
-function login() {
-    const u = document.getElementById("usuario").value.trim();
-    const p = document.getElementById("password").value.trim();
-    const m = document.getElementById("mensajeLogin");
-
-    if (u === "admin" && p === "1234") {
-        sessionStorage.setItem("adminLogueado", "true");
-        m.innerHTML = "ACCESO CONCEDIDO... 🔥";
-        m.style.color = "#25D366";
-        setTimeout(() => { window.location.href = "admin.html"; }, 800);
-    } else {
-        m.innerHTML = "DATOS INCORRECTOS ❌";
-        m.style.color = "#e63946";
-    }
-}
-
-// FUNCIÓN PARA ENVIAR AL WHATSAPP Y GUARDAR EN EL ADMIN
-async function hacerPedido(){
-    if(carrito.length === 0) return alert("El carrito está vacío");
-    const nom = document.getElementById("clienteNombre").value;
-    const tel = document.getElementById("clienteTel").value;
-    const dir = document.getElementById("clienteDir").value;
-    
-    if(!nom || !tel || !dir) return alert("Por favor completa tus datos de envío");
-    
-    // 1. Guardar en el panel de Admin (API)
-    const pedidoData = {
-        id: Date.now().toString(),
-        cliente: nom,
-        telefono: tel,
-        direccion: dir,
-        productos: carrito,
-        fecha: new Date().toLocaleDateString()
-    };
-
-    try {
-        await fetch(`${API}/pedidos`, {
-            method: "POST",
-            headers: {"Content-Type": "application/json"},
-            body: JSON.stringify(pedidoData)
-        });
-    } catch (e) { console.log("No se pudo guardar en el panel, pero enviando WhatsApp..."); }
-
-    // 2. Abrir WhatsApp
-    let msj = `*NUEVO PEDIDO CHIKAWEAR*%0A%0A`;
-    carrito.forEach(p => msj += `- ${p.nombre} ($${p.precio.toLocaleString()})%0A`);
-    msj += `%0A*ENVÍO:* ${document.getElementById("resEnv").textContent}`;
-    msj += `%0A*TOTAL:* ${document.getElementById("total").textContent}`;
-    msj += `%0A%0A*DATOS:*%0A- Cliente: ${nom}%0A- Dir: ${dir}%0A- WhatsApp: ${tel}`;
-    
-    window.open(`https://wa.me/573238459904?text=${msj}`);
-}
-
-cargarProductosTienda();
-</script>
 </body>
 </html>
